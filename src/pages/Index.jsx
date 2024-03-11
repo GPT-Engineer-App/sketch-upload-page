@@ -39,21 +39,21 @@ const Index = () => {
 
   return (
     <Container maxW="container.md" py={10}>
-      <VStack spacing={6}>
-        <Heading as="h1" size="xl">
+      <VStack spacing={6} align="left">
+        <Heading as="h1" size="xl" textAlign="left">
           Sketch Uploader
         </Heading>
-        <Text>If you've got a sketch, you can upload it here!</Text>
-        <Box>
+        <Text textAlign="left">If you've got a sketch, you can upload it here!</Text>
+        <Box textAlign="left">
           <Input type="file" accept="image/*" onChange={handleFileChange} hidden id="file-upload" />
-          <Center>
-            <Stack direction="row" spacing={4} align="center">
+          <Box>
+            <Stack direction="row" spacing={4}>
               <Button leftIcon={<FaUpload />} colorScheme="teal" onClick={() => document.getElementById("file-upload").click()}>
                 Choose File
               </Button>
               <Text>{selectedFile ? selectedFile.name : "No file chosen"}</Text>
             </Stack>
-          </Center>
+          </Box>
         </Box>
         <Button colorScheme="blue" size="lg" leftIcon={<FaUpload />} onClick={handleUpload} isDisabled={!selectedFile}>
           Upload
